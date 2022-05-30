@@ -1,0 +1,7 @@
+﻿  FindDNA.cpp
+D:\Development\Alloc_RNA\Alloc_RNA\src\FindDNA.cpp(42,20): warning C4018: '<': signed/unsigned mismatch
+D:\Development\Alloc_RNA\Alloc_RNA\src\FindDNA.cpp(81,20): warning C4018: '<': signed/unsigned mismatch
+D:\Development\Alloc_RNA\Alloc_RNA\src\FindDNA.cpp(91,42): warning C4018: '<': signed/unsigned mismatch
+D:\Development\Alloc_RNA\Alloc_RNA\src\FindDNA.cpp(100,22): warning C4018: '<': signed/unsigned mismatch
+D:\Development\Alloc_RNA\Alloc_RNA\src\FindDNA.cpp(115,23): warning C4018: '<': signed/unsigned mismatch
+  Alloc_RNA.vcxproj -> D:\Development\Alloc_RNA\Alloc_RNA\Debug\Alloc_RNA.exe

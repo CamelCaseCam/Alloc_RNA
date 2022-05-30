@@ -1,0 +1,7 @@
+﻿  main.cpp
+  Generating code
+  88 of 603 functions (14.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    59 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Alloc_RNA.vcxproj -> D:\Development\Alloc_RNA\Alloc_RNA\x64\Release\Alloc_RNA.exe
