@@ -216,6 +216,7 @@ void LoadDNAVectors(std::ifstream& file, std::vector<std::vector<uint_fast8_t>>&
 			elem.push_back(data[j]);
 		}
 		Output.push_back(std::move(elem));
+		delete[] data;
 	}
 
 }
