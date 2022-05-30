@@ -1,5 +1,5 @@
 """
-Assemble and sort some COVID reads...
+Find a new RNA sequence not present in a given set of sequences. Allow users to upload a transcriptome or choose from a set of pre-loaded transcriptomes.
 """
 
 import subprocess
@@ -10,26 +10,17 @@ from latch.types import LatchFile
 
 
 @small_task
-def assembly_task(read1: LatchFile, read2: LatchFile) -> LatchFile:
+def assembly_task(length: int, transcriptome: LatchFile, transcriptome_option: str) -> LatchFile:
 
     # A reference to our output.
     sam_file = Path("covid_assembly.sam").resolve()
 
-    _bowtie2_cmd = [
-        "bowtie2/bowtie2",
-        "--local",
-        "-x",
-        "wuhan",
-        "-1",
-        read1.local_path,
-        "-2",
-        read2.local_path,
-        "--very-sensitive-local",
-        "-S",
-        str(sam_file),
+    Alloc_cmd = [
+        "Alloc_RNA",
+        str(length),
     ]
 
-    subprocess.run(_bowtie2_cmd)
+    subprocess.run(Alloc_cmd)
 
     return LatchFile(str(sam_file), "latch:///covid_assembly.sam")
 
@@ -55,29 +46,20 @@ def sort_bam_task(sam: LatchFile) -> LatchFile:
 
 
 @workflow
-def assemble_and_sort(read1: LatchFile, read2: LatchFile) -> LatchFile:
+def get_unique_RNA(length: int, ) -> LatchFile:
     """Description...
 
-    markdown header
-    ----
-
-    Write some documentation about your workflow in
-    markdown here:
-
-    > Regular markdown constructs work as expected.
-
-    # Heading
-
-    * content1
-    * content2
+    Get unique RNA
+    --------------
+    Get unique RNA from a given transcriptome. User may upload additional files or choose from a pre-loaded set of transcriptomes.
 
     __metadata__:
-        display_name: Assemble and Sort FastQ Files
+        display_name: Get unique RNA from a given transcriptome
         author:
-            name:
-            email:
-            github:
-        repository:
+            name: Cameron Kroll
+            email: cameron.kroll@gmail.com
+            github: github.com/CamelCaseCam
+        repository: 
         license:
             id: MIT
 
