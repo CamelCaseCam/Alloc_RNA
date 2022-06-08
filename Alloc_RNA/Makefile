@@ -39,8 +39,8 @@ TARGET = $(TARGETDIR)/Alloc_RNA
 OBJDIR = ../bin/Debug-linux-x86_64/Alloc_RNA
 DEFINES += -DAlloc_RNA_DEBUG
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -g
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g
-ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -g -std=c++2a
+ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -static -static-libgcc -static-libstdc++
 
 else ifeq ($(config),release)
 TARGETDIR = ../bin/Release-linux-x86_64/Alloc_RNA
@@ -48,8 +48,8 @@ TARGET = $(TARGETDIR)/Alloc_RNA
 OBJDIR = ../bin/Release-linux-x86_64/Alloc_RNA
 DEFINES += -DAlloc_RNA_RELEASE
 ALL_CFLAGS += $(CFLAGS) $(ALL_CPPFLAGS) -m64 -O2
-ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2
-ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s
+ALL_CXXFLAGS += $(CXXFLAGS) $(ALL_CPPFLAGS) -m64 -O2 -std=c++2a
+ALL_LDFLAGS += $(LDFLAGS) -L/usr/lib64 -m64 -s -static -static-libgcc -static-libstdc++
 
 endif
 

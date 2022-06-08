@@ -33,6 +33,17 @@ project "Alloc_RNA"
 		staticruntime "Off"
 		systemversion "latest"
 
+	filter "system:linux"
+		linkoptions
+		{
+			"-static",
+			"-static-libgcc",
+			"-static-libstdc++",
+			--"'-rpath=\"$$ORIGIN'\""
+		}
+		cppdialect "C++2a"
+		systemversion "latest"
+
     filter "configurations:Debug"
 		defines "Alloc_RNA_DEBUG"
 		symbols "On"

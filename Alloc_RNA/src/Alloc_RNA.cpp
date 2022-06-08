@@ -28,7 +28,7 @@ std::vector<uint_fast8_t> Alloc_RNA(int Len, std::vector<std::vector<uint_fast8_
 	{
 		NumThreads = CheckAgainst.size();
 	}
-	
+
 	//Create a vector of threads
 	std::vector<std::thread> Threads;
 	//Create a vector of pointers to the sequences to check against. The threads will use these to communicate with the main thread
@@ -65,6 +65,9 @@ char RandomNucleotide();
 
 NucleotideRegion CreateSequence(int Len)
 {
+	//Seed the random number generator
+	rnd.seed(std::random_device()());
+
 	//Fill vector with Len random nucleotides
 	std::string Output;
 	Output.reserve(Len);

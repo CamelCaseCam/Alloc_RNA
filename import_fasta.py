@@ -22,6 +22,7 @@ def load_from_file(file_name, output_file):
         for sequence in import_fasta(file_name):
             f.write(str(sequence) + "\n")
 
-FilePath = "./Testing/GRCh38_latest_rna.fna"
-OutputFile = "./Testing/HumanTranscriptome.txt"
+#Change these lines to match your file names
+FilePath = "./Testing/mouse.1.rna.fna"
+OutputFile = "./Testing/MouseTranscriptome.txt"
 load_from_file(FilePath, OutputFile)
